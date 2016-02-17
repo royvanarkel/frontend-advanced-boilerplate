@@ -1,17 +1,65 @@
+---
+title: Airbnb flat
+---
+
 <!-- source/flats/show.html.erb -->
 
 <!-- Read from data.flats with owner key -->
 <% flat = data.flats[owner] %>
+<div class="banner-picture" style="background-image: url('<%= image_path flat.picture %>');">
 
-<!-- Inject flat data in template -->
-<%= image_tag flat.owner_picture, class: "img-circle" %>
-<p><%= flat.owner_name %></p>
-<h1><%= flat.description %></h1>
-<p><%= flat.city %></p>
-<p>
-  <% if flat.wifi? %>
-  wifi:<i class="fa fa-check"></i>
-  <% else %>
-  wifi:<i class="fa fa-close"></i>
-  <% end %>
-</p>
+</div>
+
+<div class="container padded">
+  <div class="row">
+    <!-- Inject flat data in template -->
+    <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+      <div class="person-banner">
+        <div class="person-banner-picture">
+        <%= image_tag flat.owner_picture, class: "avatar-xl" %>
+          <p><%= owner %></p>
+        </div>
+        <div class="person-banner-info">
+          <h3><%= flat.summary %></h3>
+          <p><%= flat.city %></p>
+          <p>
+            <% if flat.wifi? %>
+            wifi: <i class="fa fa-check"></i>
+            <% else %>
+            wifi: <i class="fa fa-close"></i>
+            <% end %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="booking-form">
+        <h3>Book this flat</h3>
+        <form action="#">
+          <div class="form-row">
+          <div class="row">
+              <div class="col-xs-6">
+                <input type="text" class="form-control input-lg" placeholder="checkin">
+              </div>
+              <div class="col-xs-6">
+                <input type="text" class="form-control input-lg" placeholder="checkout">
+              </div>
+            </div>
+          </div>
+            <div class="form-row">
+          <div class="row">
+              <div class="col-xs-12">
+                <select name="" id="" class="form-control input-lg">
+                  <option value="1">1 person</option>
+                  <option value="2">2 persons</option>
+                  <option value="3">3 persons</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <input type="submit" class="btn btn-danger btn-lg" value="Book">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

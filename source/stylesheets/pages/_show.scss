@@ -1,0 +1,41 @@
+.banner-picture {
+  height: 50vh;
+  background-size: cover !important;
+  background-position: center;
+}
+
+.person-banner {
+  display: flex;
+  align-item: center;
+
+}
+
+.person-banner-picture {
+  text-align: center;
+  color: $gray;
+  font-size: 12px;
+}
+
+.person-banner-info {
+  margin-left: 10px;
+  p {
+    color: $gray;
+    font-size: 14px;
+  }
+  h3 {
+    font-size: 15px;
+  }
+}
+
+.booking-form {
+  padding: 20px;
+  background-color: $gray-lighter;
+  .btn {
+    width: 100%;
+  }
+  .form-row {
+    margin-bottom: 10px;
+  }
+}
+
+
